@@ -1,0 +1,24 @@
+{
+    "name": "shama/aura-system-installer",
+    "type": "composer-installer",
+    "license": "MIT",
+    "description": "Composer Installer for the Aura System",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Kyle Robinson Young",
+            "email": "kyle@dontkry.com",
+            "homepage": "https://github.com/shama"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Aura\\": "src/" }
+    },
+    "extra": {
+        "class": "Aura\\Installer"
+    },
+    "require-dev": {
+        "composer/composer": "1.0.*"
+    },
+    "minimum-stability": "dev"
+}
