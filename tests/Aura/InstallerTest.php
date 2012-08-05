@@ -51,16 +51,4 @@ class InstallerTest extends TestCase
         $result = $installer->getInstallPath($package);
         $this->assertEquals('package/Aura.Autoload/', $result);
     }
-
-    /**
-     * testNonAuraSystemInstallPath
-     */
-    public function testNonAuraSystemInstallPath()
-    {
-        $installer = new Installer($this->io, $this->composer);
-        $package = new MemoryPackage('aura/autoload', '1.0.0', '1.0.0');
-
-        $result = $installer->getInstallPath($package);
-        $this->assertContains('vendor/aura/autoload', $result);
-    }
 }

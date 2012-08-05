@@ -14,7 +14,7 @@ class Installer extends LibraryInstaller
         $prettyName = $package->getPrettyName();
         list($vendor, $name) = explode('/', $prettyName);
 
-        if ($this->isAuraSystemInstall() && strtolower($vendor) === 'aura') {
+        if (strtolower($vendor) === 'aura') {
             $vendor = ucfirst($vendor);
             $name = ucfirst($name);
 
@@ -29,24 +29,6 @@ class Installer extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return $this->isAuraSystemInstall();
-    }
-
-    /**
-     * If package is an Aura System Install
-     *
-     * @return boolean
-     */
-    protected function isAuraSystemInstall()
-    {
-        $consumerPackage = $this->composer->getPackage();
-        if ($consumerPackage) {
-            $extra = $consumerPackage->getExtra();
-            if (!empty($extra['aura-system-install'])) {
-                return true;
-            }
-        }
-
-        return false;
+        return true;
     }
 }

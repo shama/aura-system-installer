@@ -3,6 +3,9 @@
 This is a Composer Installer for the Aura System. It should
 only be used by the aura-system.
 
+If `aura-system-installer` is included, all `aura` vendor
+packages will be installed to `package/Vendor.Name/`.
+
 ```json
 {
     "name": "hari/aura-system",
@@ -20,9 +23,6 @@ only be used by the aura-system.
         "aura/uri": "1.0.0-beta3",
         "aura/view": "1.0.0-beta3",
         "aura/web": "1.0.0-beta3"
-    },
-    "extra": {
-        "aura-system-install": 1
     }
 }
 ```
