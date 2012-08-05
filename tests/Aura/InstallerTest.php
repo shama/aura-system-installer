@@ -42,12 +42,6 @@ class InstallerTest extends TestCase
         $installer = new Installer($this->io, $this->composer);
         $package = new MemoryPackage('aura/autoload', '1.0.0', '1.0.0');
 
-        $consumerPackage = new MemoryPackage('hari/aura-system', '1.0.0', '1.0.0');
-        $this->composer->setPackage($consumerPackage);
-        $consumerPackage->setExtra(array(
-            'aura-system-install' => true,
-        ));
-
         $result = $installer->getInstallPath($package);
         $this->assertEquals('package/Aura.Autoload/', $result);
     }
